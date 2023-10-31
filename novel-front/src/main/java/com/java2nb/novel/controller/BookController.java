@@ -94,6 +94,13 @@ public class BookController extends BaseController {
         return RestResult.ok(bookService.queryBookDetail(id));
     }
 
+    /**
+     * 查询小说章节信息
+     */
+    @GetMapping("queryBookContent/{bookContentId}")
+    public RestResult<?> queryBookContent(@PathVariable("bookContentId") Long bookContentId) {
+        return RestResult.ok(bookService.queryBookContent(bookContentId).getContent());
+    }
 
     /**
      * 查询小说排行信息
